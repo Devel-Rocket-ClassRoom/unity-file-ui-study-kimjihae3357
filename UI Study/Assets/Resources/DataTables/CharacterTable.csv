@@ -1,0 +1,4 @@
+Id,Name,Desc,Job,Attack,Icon,Image
+Character1,Character1Name,Character1Desc,Warrior,5,Character_Warrior_Icon,Character_Warrior
+Character2,Character2Name,Character2Desc,Archer,10,Character_Archer_Icon,Character_Archer
+Character3,Character3Name,Character3Desc,Wizard,20,Character_Wizard_Icon,Character_Wizard

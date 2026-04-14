@@ -1,5 +1,19 @@
 ﻿Id,String
-Hello,안녕
-Bye,잘가
-You Die,너 죽음
-You Live,너 살음
+,
+HELLO,안녕
+BYE,잘가
+YOU DIE,너 죽음
+Item1Name,검
+Item2Name,방패
+Item3Name,활 
+Item4Name,물약 
+Item1Desc,이것은 검이다.
+Item2Desc,이것은 방패다.
+Item3Desc,이것은 활이다.
+Item4Desc,이것은 물약이다.
+Character1Name,전사
+Character2Name,궁수
+Character3Name,마법사
+Character1Desc,이것은 캐릭터 1이다
+Character2Desc,이것은 캐릭터 2이다
+Character3Desc,이것은 캐릭터 3이다

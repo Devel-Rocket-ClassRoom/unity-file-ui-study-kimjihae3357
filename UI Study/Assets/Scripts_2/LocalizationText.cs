@@ -45,7 +45,7 @@ public class LocalizationText : MonoBehaviour
 
     }
 
-    private void OnChangedId()
+    public void OnChangedId()
     {
         text.text = DataTableManager.StringTable.Get(id);
     }
