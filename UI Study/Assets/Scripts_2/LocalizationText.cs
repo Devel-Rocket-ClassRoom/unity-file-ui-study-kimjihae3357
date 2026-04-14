@@ -13,6 +13,9 @@ public class LocalizationText : MonoBehaviour
     public string id;
     public TextMeshProUGUI text;
 
+    private object[] formatArgs = new object[0];
+
+
 
     private void OnEnable()
     {
@@ -25,7 +28,6 @@ public class LocalizationText : MonoBehaviour
         else
         {
             OnChangeLanguage(editorLang);
-            //OnChangedId();
         }
 #endif
 
@@ -39,7 +41,6 @@ public class LocalizationText : MonoBehaviour
     {
 #if UNITY_EDITOR
         OnChangeLanguage(editorLang);
-        //OnChangedId();
 
 #endif
 
@@ -47,35 +48,29 @@ public class LocalizationText : MonoBehaviour
 
     public void OnChangedId()
     {
-        text.text = DataTableManager.StringTable.Get(id);
+        string localized = DataTableManager.StringTable.Get(id);
+        text.text = string.Format(localized, formatArgs);
+    }
+
+    public void SetFormat(string newId, params object[] args)
+    {
+        id = newId;
+        formatArgs = args;
+        OnChangedId();
     }
 
     private void OnChangeLanguage()
     {
-        text.text = DataTableManager.StringTable.Get(id);
+        string localized = DataTableManager.StringTable.Get(id);
+        text.text = string.Format(localized, formatArgs);
     }
 #if UNITY_EDITOR
 
     private void OnChangeLanguage(Languages lang)
     {
         var stringTable = DataTableManager.GetStringTable(lang);
-        text.text = stringTable.Get(id);
-    }
-
-    [ContextMenu("한국어")] //언어 바꾸기
-    private void ChangeKorean()
-    {
-        //DataTableManager.StringTable.
-    }
-    [ContextMenu("영어")]
-    private void ChangEnglish()
-    {
-
-    }
-    [ContextMenu("일본어")]
-    private void ChangeJapanese()
-    {
-
+        string localized = stringTable.Get(id);
+        text.text = string.Format(localized, formatArgs);
     }
 
 #endif

@@ -14,6 +14,14 @@ Item4Desc,이것은 물약이다.
 Character1Name,전사
 Character2Name,궁수
 Character3Name,마법사
-Character1Desc,이것은 캐릭터 1이다
-Character2Desc,이것은 캐릭터 2이다
-Character3Desc,이것은 캐릭터 3이다
+Character1Desc,"강력한 체력과 방어력을 바탕으로
+최전선에서 적을 막아내는 전사."
+Character2Desc,"빠른 속도와 정확한 사격으로
+멀리서 적을 제압하는 궁수."
+Character3Desc,"강력한 마법으로 적을 섬멸하는
+원거리 마법 공격 전문가."
+AttackText,공격력 : {0}
+Character1Job,불꽃파워전사
+Character2Job,최강속도궁수
+Character3Job,얼음서리마법사
+JobText,직업 : {0}

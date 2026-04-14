@@ -10,7 +10,7 @@ public class CharacterData
 {
     public string Id { get; set; }
     public string Name { get; set; }
-    public CharacterJobs Job { get; set; }
+    public string Job { get; set; }
     public string Desc { get; set; }
     public int Attack { get; set; }
     public string Icon { get; set; }
@@ -19,7 +19,7 @@ public class CharacterData
     public string StringName => DataTableManager.StringTable.Get(Name);
     public string StringDesc => DataTableManager.StringTable.Get(Desc);
     public Sprite SpriteIcon => Resources.Load<Sprite>($"Icon/{Icon}");
-    public Sprite SpriteImage => Resources.Load<Sprite>($"Image/{Image}");
+    public Sprite SpriteImage => Resources.Load<Sprite>($"Icon/{Image}"); //Icon이 폴더명
 
     public override string ToString()
     {

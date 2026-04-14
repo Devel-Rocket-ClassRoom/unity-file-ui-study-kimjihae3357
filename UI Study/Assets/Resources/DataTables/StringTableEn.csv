@@ -11,3 +11,13 @@ Item1Desc,This is a sword.
 Item2Desc,This is a shield.
 Item3Desc,This is a bow.
 Item4Desc,This is a potion.
+Character1Name,Wrrior
+Character2Name,Archer
+Character3Name,Wizard
+Character1Desc,"A warrior who stands on the front lines,
+holding back enemies with powerful health and defense."
+Character2Desc,"An archer who subdues enemies from afar
+with swift speed and precise shots."
+Character3Desc,"A mage who annihilates enemies with powerful magic,
+specializing in long-range attacks."
+AttackText,Attack : {0}

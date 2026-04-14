@@ -12,12 +12,6 @@ public enum ItemTypes
     Consumable,
 }
 
-public enum CharacterJobs
-{
-    Warrior,
-    Archer,
-    Wizard,
-}
 
 public static class Variables
 {
