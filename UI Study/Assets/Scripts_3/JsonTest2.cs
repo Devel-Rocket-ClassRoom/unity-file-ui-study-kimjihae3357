@@ -14,7 +14,7 @@ public class SomeClass
 }
 
 [System.Serializable]
-public class SaveData
+public class SavaData1
 {
     public List<SomeClass> objects = new List<SomeClass>();
 }
@@ -46,7 +46,7 @@ public class JsonTest2 : MonoBehaviour
         string folderPath = Path.GetDirectoryName(FileFullPath);
         Directory.CreateDirectory(folderPath);
 
-        SaveData saveData = new SaveData();
+        SavaData1 SavaData1 = new SavaData1();
 
         for (int i = 0; i < spawnedObjects.Count; i++)
         {
@@ -58,10 +58,10 @@ public class JsonTest2 : MonoBehaviour
             data.rot = obj.transform.rotation;
             data.scale = obj.transform.localScale;
             data.color = obj.GetComponent<Renderer>().material.color;
-            saveData.objects.Add(data);
+            SavaData1.objects.Add(data);
 
         }
-        var json = JsonConvert.SerializeObject(saveData, jsonSettings);
+        var json = JsonConvert.SerializeObject(SavaData1, jsonSettings);
         File.WriteAllText(FileFullPath, json);
         Debug.Log("세이브 완료");
     }
@@ -69,7 +69,7 @@ public class JsonTest2 : MonoBehaviour
     public void Load()
     {
         string json = File.ReadAllText(FileFullPath);
-        SaveData saveData = JsonConvert.DeserializeObject<SaveData>(json, jsonSettings);
+        SavaData1 SavaData1 = JsonConvert.DeserializeObject<SavaData1>(json, jsonSettings);
 
         for (int i = 0; i < spawnedObjects.Count; i++)
         {
@@ -78,9 +78,9 @@ public class JsonTest2 : MonoBehaviour
         spawnedObjects.Clear();
         spawnedPrefabIndex.Clear();
 
-        for (int i = 0; i < saveData.objects.Count; i++)
+        for (int i = 0; i < SavaData1.objects.Count; i++)
         {
-            SomeClass data = saveData.objects[i];
+            SomeClass data = SavaData1.objects[i];
             GameObject obj = Instantiate(prefabs[data.prefabIndex], data.pos, data.rot);
             obj.transform.localScale = data.scale;
             obj.GetComponent<Renderer>().material.color = data.color;
