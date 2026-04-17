@@ -31,12 +31,12 @@ public class StartWindow : GenericWindow
 
     public override void Close()
     {
-        base.Open();
+        base.Close();
     }
 
     public void OnContinue()
     {
-        Debug.Log("OnContinue()");
+        windowManager.Open(1);
     }
 
     public void OnNewGame()
@@ -46,6 +46,6 @@ public class StartWindow : GenericWindow
 
     public void OnOption()
     {
-        Debug.Log("OnOption()");
+        windowManager.Open(3);
     }
 }
